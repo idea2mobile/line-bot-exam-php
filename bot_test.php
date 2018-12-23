@@ -26,8 +26,9 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Image"
-    else if($message == "คนหล่อ"){
-        $image_url = "https://scontent.fbkk22-1.fna.fbcdn.net/v/t1.0-9/12376688_10209005410397348_4296629859977108075_n.jpg?_nc_cat=111&_nc_ht=scontent.fbkk22-1.fna&oh=7a6812dfebd34c600af9f6850163316c&oe=5C9DA7BF";
+   
+    else if($message == "รูปน้องแมว"){
+        $image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;

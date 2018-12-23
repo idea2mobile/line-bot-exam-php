@@ -26,8 +26,8 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Image"
-    else if($message == "รูปพี่อ้วน"){
-        $image_url = "https://media.licdn.com/dms/image/C5103AQGYv4umDKkOsQ/profile-displayphoto-shrink_100_100/0?e=1551312000&v=beta&t=Gt840m3pfs3-rpZ4SCBOz1sYCGQ74gDrIaw4CM3EiDM";
+    else if($message == "คนหล่อ"){
+        $image_url = "http://myblog.idea2mobile.com/wp-content/uploads/2018/11/%E0%B8%9F2.jpg";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;

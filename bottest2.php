@@ -1,17 +1,10 @@
-curl -v -X POST https://api.line.me/v2/bot/message/reply \
--H 'Content-Type:application/json' \
--H 'Authorization: Bearer {channel access token}' \
--d '{
-    "replyToken":"INIvvL/LfQydi/k3bEPnlCCFLo1E3qDDn7MlyXY7If/I5WQsLPC9YATcozqq5lkfRT9OJw5B/3wm+0vmXz6j05XPh0aIFTkn95/fUlWU/ZQ3Yf4qfGymsUtSYVj8gyfGn852VLrJ89IEwvNJHT0XKgdB04t89/1O/w1cDnyilFU=
-",
-    "messages":[
-        {
-            "type":"text",
-            "text":"Hello, user"
-        },
-        {
-            "type":"text",
-            "text":"May I help you?"
-        }
-    ]
-}'
+<?php
+require "vendor/autoload.php";
+$access_token = 'INIvvL/LfQydi/k3bEPnlCCFLo1E3qDDn7MlyXY7If/I5WQsLPC9YATcozqq5lkfRT9OJw5B/3wm+0vmXz6j05XPh0aIFTkn95/fUlWU/ZQ3Yf4qfGymsUtSYVj8gyfGn852VLrJ89IEwvNJHT0XKgdB04t89/1O/w1cDnyilFU=';
+$channelSecret = 'bc33df0bbb259688d445ebee53846b76';
+$pushID = 'U84949afd83aa60459e3968e556a762e3';
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สนใจไหม');
+$response = $bot->pushMessage($pushID, $textMessageBuilder);
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody();

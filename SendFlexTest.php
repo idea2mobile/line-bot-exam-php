@@ -109,7 +109,7 @@ JSON;
 
             return ['status' => 200];
         };
-        $bot = new LINEBot(new DummyHttpClient($this, $mock), ['channelSecret' => 'CHANNEL-SECRET']);
+        $bot = new LINEBot(new DummyHttpClient($this, $mock), ['channelSecret' => 'bc33df0bbb259688d445ebee53846b76']);
         $res = $bot->replyMessage(
             'REPLY-TOKEN',
             FlexMessageBuilder::builder()

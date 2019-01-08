@@ -14,7 +14,7 @@
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "พี่อ้วนหล่อสุด";
+        $arrayPostData['messages'][0]['text'] = "พี่อ้วนเป็น Line Bot Account หน้าตาดีเมื่อมีคนมสวัสดี";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
